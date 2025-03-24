@@ -144,25 +144,34 @@ function App() {
           <h1>=</h1>
         </div>
         <div
-          className='bg-red-500 w-fit text-white font-bold text-[24px] rounded-[15px] p-[5px] justify-items-center mb-[10px] cursor-pointer'
+          className='bg-red-500 w-fit text-white font-bold text-[18px] rounded-[15px] p-[5px] justify-items-center mb-[10px] cursor-pointer'
           onClick={handleClearClick}
         >
           <h1>clear</h1>
         </div>
         <div
-          className='bg-blue-800 w-fit text-white font-bold text-[24px] rounded-[15px] p-[10px] justify-items-center mb-[10px] cursor-pointer'
-          onClick={handleMemoryStore}
-        >
-          <h1>MR</h1>
-        </div>
+  className='bg-blue-800 w-fit text-white font-bold text-[15px] rounded-[15px] p-[10px] justify-items-center mb-[10px] cursor-pointer'
+  onClick={handleMemoryRecall}
+>
+  <h1>MR</h1>
+</div>
+
+<div
+  className='bg-red-500 w-fit text-white font-bold text-[15px] rounded-[15px] p-[10px] justify-items-center mb-[10px] cursor-pointer'
+  onClick={() => {
+    const storedValue = localStorage.getItem('myValue');
+    if (storedValue) {
+      handleMemoryRemove();
+    } else {
+      handleMemoryStore();
+    }
+  }}
+>
+  <h1>RM</h1>
+</div>
+
         <div
-          className='bg-red-500 w-fit text-white font-bold text-[24px] rounded-[15px] p-[10px] justify-items-center mb-[10px] cursor-pointer'
-          onClick={handleMemoryRemove}
-        >
-          <h1>RM</h1>
-        </div>
-        <div
-          className='bg-red-500 w-fit text-white font-bold text-[24px] rounded-[15px] p-[10px] justify-items-center mb-[10px] cursor-pointer'
+          className='bg-red-500 w-fit text-white font-bold text-[15px] rounded-[15px] p-[10px] justify-items-center mb-[10px] cursor-pointer'
           onClick={handleDeleteClick}
         >
           <h1>del</h1>
